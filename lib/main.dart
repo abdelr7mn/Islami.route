@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:islamic_app/home.dart';
+import 'package:islamic_app/Home/home.dart';
 
 void main() {
   runApp(const MyApp());
@@ -14,7 +14,7 @@ void main() {
         debugShowCheckedModeBanner: false,
         initialRoute:HomeScreen.routeName,
         routes: {
-          HomeScreen.routeName:(context) => const HomeScreen(),
+          HomeScreen.routeName:(context) =>  HomeScreen(),
         },
       );
     }
