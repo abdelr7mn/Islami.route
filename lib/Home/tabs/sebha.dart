@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 
-class SebhaTab extends StatelessWidget {
+class SebhaTab extends StatelessWidget {@override
   const SebhaTab({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      color: Colors.blue,
-    );
+    return Container(color: Colors.cyanAccent);
   }
 }
+
+
