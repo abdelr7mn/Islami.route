@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:islamic_app/Home/tabs/sura_detalis.dart';
+import 'package:islamic_app/Home/tabs/sura_model.dart';
 
 class QuranTab extends StatelessWidget {
   QuranTab({super.key});
@@ -31,18 +33,37 @@ class QuranTab extends StatelessWidget {
       Expanded(
         child: ListView.separated(
           separatorBuilder: (context, index) {
-            return Divider(
-              thickness: 2
-              ,
-              color: Color(0xffB7935F),
-              indent: 40,
-              endIndent: 40,
+            return Row(
+              children: [
+                Expanded(
+
+                    child: Align(
+                  alignment: Alignment.centerRight,
+                    child: ImageIcon(AssetImage('assets/images/quran.png'),color: Colors.black))),
+                Expanded(
+                  flex:4,
+                  child: Divider(
+                    thickness: 1.5,
+                    color: Color(0xffB7935F),
+                  ),
+                ),
+                Expanded(child: Align(
+                    alignment: Alignment.centerLeft,
+                    child: ImageIcon(AssetImage('assets/images/quran.png',),color: Colors.black))),
+              ],
             );
           },
           itemBuilder: (context, index) {
-            return Text( Suraname[index],
-              style: TextStyle(fontSize: 25, fontFamily: 'ElMessiri'),
-              textAlign: TextAlign.center,
+            return InkWell(
+              onTap: () {
+                Navigator.pushNamed(context, SuraDetails.routeName,
+                arguments: SuraModel( Suraname[index],index)
+                );
+              },
+              child: Text( Suraname[index],
+                style: TextStyle(fontSize: 25, fontFamily: 'ElMessiri'),
+                textAlign: TextAlign.center,
+              ),
             );
           },
           itemCount: Suraname.length,

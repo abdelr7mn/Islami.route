@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:islamic_app/Home/home.dart';
 
+import 'Home/tabs/sura_detalis.dart';
+
 void main() {
   runApp(const MyApp());
 }
@@ -15,6 +17,7 @@ void main() {
         initialRoute:HomeScreen.routeName,
         routes: {
           HomeScreen.routeName:(context) =>  HomeScreen(),
+          SuraDetails.routeName:(context) =>  SuraDetails(),
         },
       );
     }

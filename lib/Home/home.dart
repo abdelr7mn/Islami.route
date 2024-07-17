@@ -27,7 +27,7 @@ class _HomeScreenState extends State<HomeScreen> {
           appBar: AppBar(
             centerTitle: true,
             backgroundColor: Colors.transparent,
-            title: Text(' اسلامى ',
+            title: Text('  إسلامى ',
                 style: TextStyle(
                   color: Colors.black,
                   fontSize: 30,
@@ -40,9 +40,7 @@ class _HomeScreenState extends State<HomeScreen> {
             onTap: (value) {
               selecteindex = value;
               setState(() {
-
               });
-
             },
             backgroundColor: Color(0xffB7935F),
             type: BottomNavigationBarType.shifting,
@@ -64,7 +62,7 @@ class _HomeScreenState extends State<HomeScreen> {
               BottomNavigationBarItem(
                 icon: ImageIcon(AssetImage('assets/images/moshaf.png')),
                 label: "",
-                backgroundColor: Color(0xffB7935F),
+                backgroundColor: Color(0xffffffff),
               ),
               BottomNavigationBarItem(
                 icon: ImageIcon(AssetImage('assets/images/radio.png')),
