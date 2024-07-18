@@ -41,7 +41,7 @@ class _SuraDetailsState extends State<SuraDetails> {
            color: Color(0xffF8F8F8),
           elevation: 4,
           shape: UnderlineInputBorder(
-          borderRadius: BorderRadius.circular(10),
+          borderRadius: BorderRadius.circular(12),
           borderSide: BorderSide(
             color: Colors.transparent,
           )
@@ -51,7 +51,8 @@ class _SuraDetailsState extends State<SuraDetails> {
             itemBuilder: (context, index) {
               return
                 Text(
-                verses[index],
+               " ${verses[index]}(${index + 1})",
+                textDirection: TextDirection.rtl,
                 textAlign: TextAlign.center,
                 style: TextStyle(
                   color: Colors.black,
@@ -66,7 +67,6 @@ class _SuraDetailsState extends State<SuraDetails> {
       ),
     );
   }
-
   LoadSuraFile(int index) async {
     String sura = await rootBundle.loadString("assets/files/${index + 1}.txt");
 
