@@ -31,7 +31,7 @@ class _SuraDetailsState extends State<SuraDetails> {
             model.Suraname,
             style: TextStyle(
               color: Colors.black,
-              fontSize: 30,
+              fontSize: 60,
               fontWeight: FontWeight.w700,
               fontFamily: 'ElMessiri',
             ),
@@ -39,7 +39,7 @@ class _SuraDetailsState extends State<SuraDetails> {
         ),
         body: Card(
            color: Color(0xffF8F8F8),
-          elevation: 4,
+          elevation: 5,
           shape: UnderlineInputBorder(
           borderRadius: BorderRadius.circular(12),
           borderSide: BorderSide(
@@ -57,7 +57,7 @@ class _SuraDetailsState extends State<SuraDetails> {
                 style: TextStyle(
                   color: Colors.black,
                   fontFamily: 'ElMessiri',
-                  fontSize: 20,
+                  fontSize: 35,
                 ),
               );
             },

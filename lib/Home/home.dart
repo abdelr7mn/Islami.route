@@ -65,7 +65,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 backgroundColor: Color(0xffffffff),
               ),
               BottomNavigationBarItem(
-                icon: ImageIcon(AssetImage('assets/images/radio.png')),
+                icon: ImageIcon(AssetImage('assets/images/radio_bottum.png')),
                 label: "",
                 backgroundColor: Color(0xffB7935F),
               ),
