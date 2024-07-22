@@ -44,7 +44,7 @@ class SebhaTabState extends State<SebhaTab> {
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
         Image.asset("assets/images/head_sebha_logo.png",
-            width: 53, height: 100),
+            width: 53, height: 110),
         Image.asset("assets/images/body_sebha_logo.png",
             width: 232, height: 243),
         SizedBox(height: 15),

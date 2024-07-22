@@ -5,8 +5,23 @@ class AhadesTab extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      color: Colors.teal,
+    return Column(
+      children: [
+        Image.asset(
+          "assets/images/hadeth_logo.png",
+          height: 219,
+          width: 312,
+        ),
+        Divider(thickness: 3, color: Color(0xffB7935F)),
+        Text(
+          'الأحاديث ',
+          textAlign: TextAlign.center,
+          style: TextStyle(fontFamily: 'ElMessiri', fontSize: 25),
+        ),
+        Divider(thickness: 3, color: Color(0xffB7935F)),
+      ],
+
+
     );
   }
 }

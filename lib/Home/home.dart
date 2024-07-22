@@ -43,7 +43,7 @@ class _HomeScreenState extends State<HomeScreen> {
               });
             },
             backgroundColor: Color(0xffB7935F),
-            type: BottomNavigationBarType.shifting,
+            type: BottomNavigationBarType.fixed,
             selectedItemColor: Colors.black,
             unselectedItemColor: Colors.white,
             showSelectedLabels: false,
@@ -84,8 +84,8 @@ class _HomeScreenState extends State<HomeScreen> {
   List<Widget> tabs = [
     QuranTab(),
     SebhaTab(),
-    RadioTab(),
     AhadesTab(),
+    RadioTab(),
     SettingTab(),
   ];
 }
