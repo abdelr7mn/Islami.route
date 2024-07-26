@@ -42,13 +42,20 @@ class _AhadesTabState extends State<AhadesTab> {
     );
   }
 
+
+  // String x ="Ali";
+  // String x2 ="  Ali";
+  // String x3 ="Ali  ";
+  // String x4 ="  Ali  ";
+  // String x5 ="Al  i";
+
   LoadAhadethFiles() {
     rootBundle.loadString('assets/files/ahadeth.txt').then((value) {
       List<String> ahadeth = value.split("#");
       for (int i = 0; i < ahadeth.length; i++) {
         String hadethOne = ahadeth[i];
 
-        List<String> hadethLines = hadethOne.split("/n");
+        List<String> hadethLines = hadethOne.trim().split("/n");
 
         String title = hadethLines[0];
 
@@ -60,7 +67,7 @@ class _AhadesTabState extends State<AhadesTab> {
         allahadeth.add(hadethModl);
         print(hadethModl.title);
       }
-      setState(() {});    
+      setState(() {});
     });
   }
 }

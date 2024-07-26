@@ -31,7 +31,7 @@ class _SuraDetailsState extends State<SuraDetails> {
             model.Suraname,
             style: TextStyle(
               color: Colors.black,
-              fontSize: 60,
+              fontSize: 30,
               fontWeight: FontWeight.w700,
               fontFamily: 'ElMessiri',
             ),
