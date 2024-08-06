@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:islamic_app/Home/home.dart';
 
+import 'Home/tabs/ahadeth_detalis.dart';
 import 'Home/tabs/sura_detalis.dart';
 
 void main() {
@@ -18,6 +19,7 @@ void main() {
         routes: {
           HomeScreen.routeName:(context) =>  HomeScreen(),
           SuraDetails.routeName:(context) =>  SuraDetails(),
+          AhadethDetails.routeName:(context) =>  AhadethDetails(),
         },
       );
     }

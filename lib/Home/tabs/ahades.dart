@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:islamic_app/Home/tabs/hadeth_model.dart';
+import 'ahadeth_detalis.dart';
+
+import 'ahadeth_detalis.dart';
 
 class AhadesTab extends StatefulWidget {
   AhadesTab({super.key});
@@ -32,22 +35,28 @@ class _AhadesTabState extends State<AhadesTab> {
         ),
         Divider(thickness: 3, color: Color(0xffB7935F)),
         Expanded(
-          child: ListView.builder(
+          child: ListView.separated(
+            separatorBuilder: (context, index) => Divider(),
             itemBuilder: (context, index) {
-              return Text(allahadeth[index].title);
+              return InkWell(
+                  onTap: () {
+                    Navigator.pushNamed(
+                      context,
+                      AhadethDetails.routeName,
+                    );
+                  },
+                  child: Text(
+                    allahadeth[index].title,
+                    style: TextStyle(fontSize: 20, fontFamily: 'ElMessiri'),
+                    textAlign: TextAlign.center,
+                  ));
             },
+            itemCount: allahadeth.length,
           ),
         )
       ],
     );
   }
-
-
-  // String x ="Ali";
-  // String x2 ="  Ali";
-  // String x3 ="Ali  ";
-  // String x4 ="  Ali  ";
-  // String x5 ="Al  i";
 
   LoadAhadethFiles() {
     rootBundle.loadString('assets/files/ahadeth.txt').then((value) {
@@ -55,7 +64,7 @@ class _AhadesTabState extends State<AhadesTab> {
       for (int i = 0; i < ahadeth.length; i++) {
         String hadethOne = ahadeth[i];
 
-        List<String> hadethLines = hadethOne.trim().split("/n");
+        List<String> hadethLines = hadethOne.trim().split("\n");
 
         String title = hadethLines[0];
 

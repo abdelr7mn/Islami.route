@@ -4,6 +4,7 @@ import 'package:islamic_app/Home/tabs/sura_model.dart';
 
 class SuraDetails extends StatefulWidget {
   static const String routeName = "SuraDetails";
+
   SuraDetails({super.key});
 
   @override
@@ -12,6 +13,7 @@ class SuraDetails extends StatefulWidget {
 
 class _SuraDetailsState extends State<SuraDetails> {
   List<String> verses = [];
+
   @override
   Widget build(BuildContext context) {
     var model = ModalRoute.of(context)?.settings.arguments as SuraModel;
@@ -38,20 +40,18 @@ class _SuraDetailsState extends State<SuraDetails> {
           ),
         ),
         body: Card(
-           color: Color(0xffF8F8F8),
+          color: Color(0xffF8F8F8),
           elevation: 5,
           shape: UnderlineInputBorder(
-          borderRadius: BorderRadius.circular(12),
-          borderSide: BorderSide(
-            color: Colors.transparent,
-          )
-        ),
+              borderRadius: BorderRadius.circular(12),
+              borderSide: BorderSide(
+                color: Colors.transparent,
+              )),
           margin: EdgeInsets.all(12),
           child: ListView.builder(
             itemBuilder: (context, index) {
-              return
-                Text(
-               " ${verses[index]}(${index + 1})",
+              return Text(
+                " ${verses[index]}(${index + 1})",
                 textDirection: TextDirection.rtl,
                 textAlign: TextAlign.center,
                 style: TextStyle(
@@ -67,6 +67,7 @@ class _SuraDetailsState extends State<SuraDetails> {
       ),
     );
   }
+
   LoadSuraFile(int index) async {
     String sura = await rootBundle.loadString("assets/files/${index + 1}.txt");
 
