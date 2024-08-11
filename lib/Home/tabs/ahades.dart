@@ -38,10 +38,8 @@ class _AhadesTabState extends State<AhadesTab> {
             itemBuilder: (context, index) {
               return InkWell(
                   onTap: () {
-                    Navigator.pushNamed(
-                      context,
-                      AhadethDetails.routeName,
-                    );
+                    Navigator.pushNamed(context, AhadethDetails.routeName,
+                        arguments: allahadeth[index]);
                   },
                   child: Text(
                     allahadeth[index].title,

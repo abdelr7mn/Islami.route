@@ -8,14 +8,14 @@ import 'package:islamic_app/Home/tabs/setting.dart';
 class HomeScreen extends StatefulWidget {
   static const String routeName = 'HomeScreen';
 
-   HomeScreen({super.key});
+  HomeScreen({super.key});
 
   @override
   State<HomeScreen> createState() => _HomeScreenState();
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  int selecteindex =0;
+  int selecteindex = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -39,8 +39,7 @@ class _HomeScreenState extends State<HomeScreen> {
             currentIndex: selecteindex,
             onTap: (value) {
               selecteindex = value;
-              setState(() {
-              });
+              setState(() {});
             },
             backgroundColor: Color(0xffB7935F),
             type: BottomNavigationBarType.fixed,
@@ -50,7 +49,7 @@ class _HomeScreenState extends State<HomeScreen> {
             showUnselectedLabels: false,
             items: [
               BottomNavigationBarItem(
-                icon: ImageIcon(AssetImage('assets/images/quran.png')),
+                icon: ImageIcon(AssetImage('assets/images/moshaf.png')),
                 label: "",
                 backgroundColor: Color(0xffB7935F),
               ),
@@ -60,7 +59,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 backgroundColor: Color(0xffB7935F),
               ),
               BottomNavigationBarItem(
-                icon: ImageIcon(AssetImage('assets/images/moshaf.png')),
+                icon: ImageIcon(AssetImage('assets/images/quran.png')),
                 label: "",
                 backgroundColor: Color(0xffffffff),
               ),
@@ -81,6 +80,7 @@ class _HomeScreenState extends State<HomeScreen> {
       ],
     );
   }
+
   List<Widget> tabs = [
     QuranTab(),
     SebhaTab(),
