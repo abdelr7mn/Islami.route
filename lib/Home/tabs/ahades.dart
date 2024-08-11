@@ -3,8 +3,6 @@ import 'package:flutter/services.dart';
 import 'package:islamic_app/Home/tabs/hadeth_model.dart';
 import 'ahadeth_detalis.dart';
 
-import 'ahadeth_detalis.dart';
-
 class AhadesTab extends StatefulWidget {
   AhadesTab({super.key});
 
@@ -28,12 +26,12 @@ class _AhadesTabState extends State<AhadesTab> {
           width: 312,
         ),
         Divider(thickness: 3, color: Color(0xffB7935F)),
-        Text(
+        const Text(
           'الأحاديث ',
           textAlign: TextAlign.center,
           style: TextStyle(fontFamily: 'ElMessiri', fontSize: 25),
         ),
-        Divider(thickness: 3, color: Color(0xffB7935F)),
+        const Divider(thickness: 3, color: Color(0xffB7935F)),
         Expanded(
           child: ListView.separated(
             separatorBuilder: (context, index) => Divider(),
