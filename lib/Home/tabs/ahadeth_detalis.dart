@@ -47,6 +47,7 @@ class AhadethDetails extends StatelessWidget {
                 style: TextStyle(
                   color: Colors.black,
                   fontFamily: 'ElMessiri',
+                  fontSize: 20,
                 ),
               );
             },
