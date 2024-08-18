@@ -25,13 +25,13 @@ class _AhadesTabState extends State<AhadesTab> {
           height: 219,
           width: 312,
         ),
-        Divider(thickness: 3, color: Color(0xffB7935F)),
+        Divider(thickness: 3),
         const Text(
           'الأحاديث ',
           textAlign: TextAlign.center,
           style: TextStyle(fontFamily: 'ElMessiri', fontSize: 25),
         ),
-        const Divider(thickness: 3, color: Color(0xffB7935F)),
+        const Divider(thickness: 3),
         Expanded(
           child: ListView.separated(
             separatorBuilder: (context, index) => Divider(),

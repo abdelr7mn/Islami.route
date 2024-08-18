@@ -25,18 +25,9 @@ class _SuraDetailsState extends State<SuraDetails> {
         image: DecorationImage(image: AssetImage("assets/images/main_bg.png")),
       ),
       child: Scaffold(
-        backgroundColor: Colors.transparent,
         appBar: AppBar(
-          backgroundColor: Colors.transparent,
-          centerTitle: true,
           title: Text(
             model.Suraname,
-            style: TextStyle(
-              color: Colors.black,
-              fontSize: 30,
-              fontWeight: FontWeight.w700,
-              fontFamily: 'ElMessiri',
-            ),
           ),
         ),
         body: Card(

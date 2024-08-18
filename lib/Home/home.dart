@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:islamic_app/Home/my_theme.dart';
 import 'package:islamic_app/Home/tabs/ahades.dart';
 import 'package:islamic_app/Home/tabs/quran.dart';
 import 'package:islamic_app/Home/tabs/radio.dart';
@@ -23,17 +24,10 @@ class _HomeScreenState extends State<HomeScreen> {
       children: [
         Image.asset("assets/images/main_bg.png"),
         Scaffold(
-          backgroundColor: Colors.transparent,
           appBar: AppBar(
-            centerTitle: true,
-            backgroundColor: Colors.transparent,
             title: Text('  إسلامى ',
-                style: TextStyle(
-                  color: Colors.black,
-                  fontSize: 30,
-                  fontWeight: FontWeight.w700,
-                  fontFamily: 'ElMessiri',
-                )),
+              style: Theme.of(context).textTheme.bodyLarge?.copyWith(fontSize: 40),
+               ),
           ),
           bottomNavigationBar: BottomNavigationBar(
             currentIndex: selecteindex,
@@ -41,37 +35,29 @@ class _HomeScreenState extends State<HomeScreen> {
               selecteindex = value;
               setState(() {});
             },
-            backgroundColor: Color(0xffB7935F),
-            type: BottomNavigationBarType.fixed,
-            selectedItemColor: Colors.black,
-            unselectedItemColor: Colors.white,
-            showSelectedLabels: false,
-            showUnselectedLabels: false,
-            items: [
-              BottomNavigationBarItem(
+             items: [
+               BottomNavigationBarItem(
                 icon: ImageIcon(AssetImage('assets/images/moshaf.png')),
                 label: "",
-                backgroundColor: Color(0xffB7935F),
               ),
               BottomNavigationBarItem(
                 icon: ImageIcon(AssetImage('assets/images/sebha.png')),
                 label: "",
-                backgroundColor: Color(0xffB7935F),
+
               ),
               BottomNavigationBarItem(
                 icon: ImageIcon(AssetImage('assets/images/quran.png')),
                 label: "",
-                backgroundColor: Color(0xffffffff),
+
               ),
               BottomNavigationBarItem(
                 icon: ImageIcon(AssetImage('assets/images/radio_bottum.png')),
                 label: "",
-                backgroundColor: Color(0xffB7935F),
+
               ),
               BottomNavigationBarItem(
                 icon: Icon(Icons.settings),
                 label: "",
-                backgroundColor: Color(0xffB7935F),
               ),
             ],
           ),

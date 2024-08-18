@@ -15,18 +15,9 @@ class AhadethDetails extends StatelessWidget {
         image: DecorationImage(image: AssetImage("assets/images/main_bg.png")),
       ),
       child: Scaffold(
-        backgroundColor: Colors.transparent,
         appBar: AppBar(
-          backgroundColor: Colors.transparent,
-          centerTitle: true,
           title: Text(
             model.title,
-            style: TextStyle(
-              color: Colors.black,
-              fontSize: 25,
-              fontWeight: FontWeight.w700,
-              fontFamily: 'ElMessiri',
-            ),
           ),
         ),
         body: Card(
@@ -44,11 +35,7 @@ class AhadethDetails extends StatelessWidget {
                 model.content[index],
                 textDirection: TextDirection.rtl,
                 textAlign: TextAlign.center,
-                style: TextStyle(
-                  color: Colors.black,
-                  fontFamily: 'ElMessiri',
-                  fontSize: 20,
-                ),
+                style: Theme.of(context).textTheme.bodyMedium,
               );
             },
             itemCount: model.content.length,
