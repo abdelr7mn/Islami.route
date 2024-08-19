@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:islamic_app/Home/my_theme.dart';
 import 'package:islamic_app/Home/tabs/ahades.dart';
 import 'package:islamic_app/Home/tabs/quran.dart';
 import 'package:islamic_app/Home/tabs/radio.dart';
@@ -8,14 +9,14 @@ import 'package:islamic_app/Home/tabs/setting.dart';
 class HomeScreen extends StatefulWidget {
   static const String routeName = 'HomeScreen';
 
-   HomeScreen({super.key});
+  HomeScreen({super.key});
 
   @override
   State<HomeScreen> createState() => _HomeScreenState();
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  int selecteindex =0;
+  int selecteindex = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -23,58 +24,40 @@ class _HomeScreenState extends State<HomeScreen> {
       children: [
         Image.asset("assets/images/main_bg.png"),
         Scaffold(
-          backgroundColor: Colors.transparent,
           appBar: AppBar(
-            centerTitle: true,
-            backgroundColor: Colors.transparent,
-            title: Text(' اسلامى ',
-                style: TextStyle(
-                  color: Colors.black,
-                  fontSize: 30,
-                  fontWeight: FontWeight.w700,
-                  fontFamily: 'ElMessiri',
-                )),
+            title: Text('  إسلامى ',
+              style: Theme.of(context).textTheme.bodyLarge?.copyWith(fontSize: 40),
+               ),
           ),
           bottomNavigationBar: BottomNavigationBar(
             currentIndex: selecteindex,
             onTap: (value) {
               selecteindex = value;
-              setState(() {
-
-              });
-
+              setState(() {});
             },
-            backgroundColor: Color(0xffB7935F),
-            type: BottomNavigationBarType.shifting,
-            selectedItemColor: Colors.black,
-            unselectedItemColor: Colors.white,
-            showSelectedLabels: false,
-            showUnselectedLabels: false,
-            items: [
-              BottomNavigationBarItem(
-                icon: ImageIcon(AssetImage('assets/images/quran.png')),
+             items: [
+               BottomNavigationBarItem(
+                icon: ImageIcon(AssetImage('assets/images/moshaf.png')),
                 label: "",
-                backgroundColor: Color(0xffB7935F),
               ),
               BottomNavigationBarItem(
                 icon: ImageIcon(AssetImage('assets/images/sebha.png')),
                 label: "",
-                backgroundColor: Color(0xffB7935F),
+
               ),
               BottomNavigationBarItem(
-                icon: ImageIcon(AssetImage('assets/images/moshaf.png')),
+                icon: ImageIcon(AssetImage('assets/images/quran.png')),
                 label: "",
-                backgroundColor: Color(0xffB7935F),
+
               ),
               BottomNavigationBarItem(
-                icon: ImageIcon(AssetImage('assets/images/radio.png')),
+                icon: ImageIcon(AssetImage('assets/images/radio_bottum.png')),
                 label: "",
-                backgroundColor: Color(0xffB7935F),
+
               ),
               BottomNavigationBarItem(
                 icon: Icon(Icons.settings),
                 label: "",
-                backgroundColor: Color(0xffB7935F),
               ),
             ],
           ),
@@ -83,11 +66,12 @@ class _HomeScreenState extends State<HomeScreen> {
       ],
     );
   }
+
   List<Widget> tabs = [
     QuranTab(),
     SebhaTab(),
-    RadioTab(),
     AhadesTab(),
+    RadioTab(),
     SettingTab(),
   ];
 }
