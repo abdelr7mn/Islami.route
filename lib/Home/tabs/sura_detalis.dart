@@ -45,11 +45,10 @@ class _SuraDetailsState extends State<SuraDetails> {
                 " ${verses[index]}(${index + 1})",
                 textDirection: TextDirection.rtl,
                 textAlign: TextAlign.center,
-                style: TextStyle(
-                  color: Colors.black,
-                  fontFamily: 'ElMessiri',
-                  fontSize: 35,
-                ),
+                style: Theme.of(context)
+                    .textTheme
+                    .bodySmall
+                    ?.copyWith(fontSize: 25),
               );
             },
             itemCount: verses.length,
