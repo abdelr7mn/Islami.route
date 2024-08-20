@@ -1,12 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:islamic_app/Home/home.dart';
 import 'package:islamic_app/Home/my_theme.dart';
+import 'package:islamic_app/provider/my_provider.dart';
+import 'package:provider/provider.dart';
 import 'Home/tabs/ahadeth_detalis.dart';
 import 'Home/tabs/sura_detalis.dart';
 import 'splshscreen.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(ChangeNotifierProvider(
+      create: (context) => MyProvider(), child: const MyApp()));
 }
 
 class MyApp extends StatelessWidget {
@@ -14,17 +17,18 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var provider = Provider.of<MyProvider>(context);
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      themeMode: ThemeMode.light,
+      themeMode: provider.mode,
       theme: MyTheme.LightTheme,
       darkTheme: MyTheme.DarkTheme,
       initialRoute: SplashScreen.routeName,
       routes: {
         HomeScreen.routeName: (context) => HomeScreen(),
         SuraDetails.routeName: (context) => SuraDetails(),
-        AhadethDetails.routeName: (context) => const AhadethDetails(),
-        SplashScreen.routeName: (context) => const SplashScreen(),
+        AhadethDetails.routeName: (context) => AhadethDetails(),
+        SplashScreen.routeName: (context) => SplashScreen(),
       },
     );
   }
