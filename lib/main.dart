@@ -5,7 +5,6 @@ import 'package:islamic_app/provider/my_provider.dart';
 import 'package:provider/provider.dart';
 import 'Home/tabs/ahadeth_detalis.dart';
 import 'Home/tabs/sura_detalis.dart';
-import 'splshscreen.dart';
 
 void main() {
   runApp(ChangeNotifierProvider(
@@ -23,12 +22,11 @@ class MyApp extends StatelessWidget {
       themeMode: provider.mode,
       theme: MyTheme.LightTheme,
       darkTheme: MyTheme.DarkTheme,
-      initialRoute: SplashScreen.routeName,
+      initialRoute: HomeScreen.routeName,
       routes: {
         HomeScreen.routeName: (context) => HomeScreen(),
         SuraDetails.routeName: (context) => SuraDetails(),
         AhadethDetails.routeName: (context) => AhadethDetails(),
-        SplashScreen.routeName: (context) => SplashScreen(),
       },
     );
   }
