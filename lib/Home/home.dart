@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:islamic_app/Home/my_theme.dart';
 import 'package:islamic_app/Home/tabs/ahades.dart';
@@ -25,15 +26,13 @@ class _HomeScreenState extends State<HomeScreen> {
     var provider = Provider.of<MyProvider>(context);
     return Stack(
       children: [
-        Image.asset(
-            provider.mode == ThemeMode.light
-            ?"assets/images/main_bg.png"
-            :"assets/images/dark_bg.png"
-        ),
+        Image.asset(provider.mode == ThemeMode.light
+            ? "assets/images/main_bg.png"
+            : "assets/images/dark_bg.png"),
         Scaffold(
           appBar: AppBar(
             title: Text(
-              '  إسلامى ',
+              'islami'.tr(),
               style:
                   Theme.of(context).textTheme.bodyLarge?.copyWith(fontSize: 40),
             ),

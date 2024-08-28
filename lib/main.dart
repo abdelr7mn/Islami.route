@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:islamic_app/Home/home.dart';
 import 'package:islamic_app/Home/my_theme.dart';
@@ -6,9 +7,18 @@ import 'package:provider/provider.dart';
 import 'Home/tabs/ahadeth_detalis.dart';
 import 'Home/tabs/sura_detalis.dart';
 
-void main() {
+void main()async{
+  WidgetsFlutterBinding.ensureInitialized();
+  await EasyLocalization.ensureInitialized();
   runApp(ChangeNotifierProvider(
-      create: (context) => MyProvider(), child: const MyApp()));
+      create: (context) => MyProvider(),
+      child: EasyLocalization(
+          supportedLocales: [Locale('en'), Locale('ar')],
+          path: 'assets/translations',
+          saveLocale: true,// <-- change the path of the translation files
+          fallbackLocale: Locale('en', 'US'),
+
+          child: const MyApp())));
 }
 
 class MyApp extends StatelessWidget {
@@ -18,6 +28,9 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     var provider = Provider.of<MyProvider>(context);
     return MaterialApp(
+      localizationsDelegates: context.localizationDelegates,
+      supportedLocales: context.supportedLocales,
+      locale: context.locale,
       debugShowCheckedModeBanner: false,
       themeMode: provider.mode,
       theme: MyTheme.LightTheme,

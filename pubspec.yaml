@@ -19,6 +19,7 @@ dependencies:
   cupertino_icons: ^1.0.2
   provider: ^6.1.2
   flutter_native_splash: ^2.4.1
+  easy_localization: ^3.0.7
 
 
 
@@ -37,7 +38,7 @@ flutter:
   assets:
     - assets/images/
     - assets/files/
-    - assets/translation/
+    - assets/translations/
 
 
 

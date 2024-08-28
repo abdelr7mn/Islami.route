@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:islamic_app/Home/my_theme.dart';
 
@@ -14,7 +15,7 @@ class SettingTab extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          Text("Theme"),
+          Text("theme".tr()),
           SizedBox(height: 12),
           InkWell(
             onTap: () {
@@ -31,11 +32,11 @@ class SettingTab extends StatelessWidget {
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(20),
                   border: Border.all(color: praimryColor)),
-              child: Text("Dark"),
+              child: Text("dark".tr()),
             ),
           ),
           SizedBox(height: 50),
-          Text("Language"),
+          Text("language".tr()),
           SizedBox(height: 12),
           InkWell(
             onTap: () {
@@ -53,7 +54,7 @@ class SettingTab extends StatelessWidget {
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(20),
                   border: Border.all(color: praimryColor)),
-              child: Text("Arabic"),
+              child: Text("arabic".tr()),
             ),
           ),
         ],

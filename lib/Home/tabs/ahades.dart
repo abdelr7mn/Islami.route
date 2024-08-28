@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:islamic_app/Home/tabs/hadeth_model.dart';
@@ -26,8 +27,8 @@ class _AhadesTabState extends State<AhadesTab> {
           width: 312,
         ),
         Divider(thickness: 3),
-        const Text(
-          'الأحاديث ',
+         Text(
+          "ahadeth".tr(),
           textAlign: TextAlign.center,
           style: TextStyle(fontFamily: 'ElMessiri', fontSize: 25),
         ),
